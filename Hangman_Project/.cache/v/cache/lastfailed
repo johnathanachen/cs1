@@ -1,0 +1,5 @@
+{
+  "hangman_test.py": true,
+  "hangman_test.py::test_isWordGuessed": true,
+  "ps3_hangman_template.py": true
+}
