@@ -1,7 +1,15 @@
 class Animal(object):
+    population = 0
+    
     def __init__(self, name):
         self.name = name
-
+    
+    @classmethod
+    def populationCount(cls):
+        cls.population += 1
+        return cls.population
+        print(cls.population)
+    
     def sleep(self):
         print(self.name , "sleeps for 8 hours")
 
@@ -102,7 +110,9 @@ class Zookeeper(object):
     def feedAnimals(self, animals, food):
         self.animals = animals
         self.food = food
-        print(self.name, "is feeding", self.food, "to", len(self.animals), "animals")    
+        population_count = Animal.populationCount()
+        print(self.name, "is feeding", self.food, "to", len(self.animals), "of",population_count , "total animals")    
         for i in animals:
+            i.populationCount()
             i.eat(self.food)
             i.sleep()
