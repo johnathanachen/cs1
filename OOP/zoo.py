@@ -116,3 +116,9 @@ class Zookeeper(object):
             i.populationCount()
             i.eat(self.food)
             i.sleep()
+
+class Obj(object):
+  _ids = count(0)
+
+  def __init__(self):
+    self.id = next(self._ids)
