@@ -1,88 +1,50 @@
 import os
 import numpy as np
 from pathlib import Path
-
-student_list = os.path.isfile("./students.txt")
-
-class Student(object):
-
-    def __init__(self, name):
-        self.name = name
-        if student_list:
-            with open('students.txt', 'r') as student_db:
-                student_names = [line.strip() for line in student_db]
-                if self.name in student_names:
-                    print(self.name, "is already in roster")
-                else:
-                    with open('students.txt', 'a') as student_db:
-                        student_db.write(self.name + "\n")    
-                        print(self.name, "is added to the roster")             
-        else:
-            f=open("students.txt", "a+")
-            print("student data created")
-            print("Current Roster: ", ', '.join(student_names))
+import Classroom
+from Classroom import Classroom
+import Students
+import roster
+import Assignments
 
 
+def precheck():
+    if any(classroom_db.startswith('classroom_') for classroom_db in os.listdir('./db/')):
+        print("Would you like to view students or assignemnts?")
+        student_or_assignments = input("--> ")
+        if student_or_assignments == "students" or "student":
+            print("Do you want to edit student roster or view Grades?")
+            edit_or_grades = input("--> ")
+            if edit_or_grades == "edit" or "edit student roster":
+                roster.roster_options()
+    else:
+        print("Hi, there's no classrooms yet. Let's create one!")
+        classroom_name = input("Classroom Name: ")
+        with open('./db/classroom_' + classroom_name + '.txt', 'a') as classroom_db:
+            classroom_db.write("\n")    
+        created_class = Classroom(classroom_name)
+        print(classroom_name, "has been created.")
+        class_schedule(created_class, classroom_name)
+        return created_class, classroom_name
 
-"""
-Student Rosters (objects)
-list of all assigments 
-grade completed assigments
-grade point average 
-"""
-# Student("Mike")
-# Student("Sam")
-# 
+def class_schedule(created_class, classroom_name):
+    print("What day is the class held on?")
+    class_date = input("Day: ")
+    print("What time does class start?")
+    class_time = input("Time: ")
+    created_class.class_schedule(class_date, class_time)
+    print(classroom_name, "will be on", class_date, "at", class_time)
 
-# student objects
-# all assienments 
-# grades
-
-# TEACHERS: add & remove students
-# TEACHERS: add & remove assignemnts 
 
 def start():
-    print("Would you like to check, add, or remove from the roster?")
-    user_choice = input("--> ")
-    if user_choice == "add":
-        print("Would you like to add assignements or students?")
-        add_choice = input("Add: ")
-        if add_choice == "students" or "student":
-            print("What is the student's name?")
-            student_name = input("Student Name: ")
-            Student(student_name)
-    elif user_choice == "remove":
-        print("Which student would you like to remove?")
-        with open('students.txt', 'r+') as student_db:
-            t = student_db.read()
-            student_db.seek(0)
-            remove_choice = input("Remove: ")
-            for line in t.split('\n'):
-                if line != remove_choice:
-                    student_db.write(line + '\n')
-            student_db.truncate()
-
-        # with open('students.txt', 'w') as student_db:
-        #     student_db.replace(remove_choice, "")
-            print(remove_choice, "has been removed from the roster")
-    # else:
-    #     print("What class would you like to start?")
-    #     class_subject = input("Subject: ")
-    #     Classroom(class_subject)
-    #     print("Classroom for", class_subject, "has been created!")
-    #     print("What is the name of the classroom?")
-    #     class_name = input("Class Name: ")
-    #     print("What day of the week will the class be held on?")
-    #     date = input("Day: ")
-    #     print("What time is the class?")
-    #     time = input("Time: ")
-    #     Classroom(class_subject).classSchedule(class_name, date, time)
-    #     print(class_name,"is on",date,"at",time)
+    precheck()
+    
 
 
-    #     student = Student("John") 
-    #     np.save("student.npy", student)
-    #     student.roster()
 
 start()
+
+
+
+
 

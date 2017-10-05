@@ -1,0 +1,5 @@
+{
+  "test_students.py::test_add_assignment": true,
+  "test_students.py::test_delete_assignemnt": true,
+  "test_students.py::test_setup": true
+}

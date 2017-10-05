@@ -1,0 +1,4 @@
+- call init assignment
+- list of all assigments 
+- grade completed assigments
+- grade point average 
