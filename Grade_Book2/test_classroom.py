@@ -1,5 +1,5 @@
 import pytest
-from Classroom import Classroom
+from classroom import Classroom
 
 def setup_for_test():
     classroom = Classroom("Math")
