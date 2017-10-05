@@ -21,13 +21,13 @@ class Student(object):
             print("student data created")
             print("Current Roster: ", ', '.join(student_names))
 
-    def add_assignments(self, assignment_name, grade):
-        self.assignment_name = assignment_name
-        self.grade = grade
+
+    def add_assignment(self, assignment_name, grade):
+        self.assignments[assignment_name] = grade
+
 
     def delete_assignment(self, assignment_name):
-        self.assignment_name = assignment_name
+        del self.assignments[assignment_name]
+        
 
-
-# remove and add grades
 # remove and add grades
