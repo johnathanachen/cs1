@@ -9,13 +9,15 @@ class Classroom(object):
     def class_schedule(self, date, time):
         self.class_date = date
         self.class_time = time
+        print(self.name, "is on", self.class_date, "at", self.class_time)
 
     def add_student(self, name, ID):
         student = Student(name, ID)
         self.student_roster[name] = ID
 
     def remove_student(self, name):
-        self.student_roster.remove(name)
+        del self.student_roster[name]
+        print(name, "has been removed from the roster for the", self.name, "class")
 
     def get_student_roster(self):
         print(self.student_roster)

@@ -3,6 +3,7 @@ class Student(object):
         self.name = name
         self.student_ID = student_ID
         self.assignments = {}
+        self.class_grade = int
 
     def add_assignment(self, assignment_name, grade):
             self.assignments[assignment_name] = grade
@@ -21,7 +22,8 @@ class Student(object):
         grade_list = self.assignments.values()
         number_of_assignments = len(grade_list)
         total_points = sum(grade_list)
-        print(int(total_points/number_of_assignments))
+        self.class_grade = int(total_points/number_of_assignments)
+        print(self.class_grade)
   
   
 
