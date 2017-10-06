@@ -15,10 +15,25 @@ def test_class_schedule():
     assert classroom.class_date == "Tuesday"
     assert classroom.class_time == "10am"
 
-def test_add_students():
+def test_add_student():
     classroom = setup_for_test()
-    classroom.add_students("Johnathan")
-    assert classroom.roster[0] == "Johnathan"
-    classroom.add_students("Jessica")
-    assert classroom.roster[1] == "Jessica"
-    assert len(classroom.roster) == 2
+    classroom.add_student("Johnathan", 1)
+    assert classroom.student_roster["Johnathan"] == 1
+    classroom.add_student("Jessica", 2)
+    assert classroom.student_roster["Jessica"] == 2
+    assert len(classroom.student_roster) == 2
+
+def test_get_student_roster():
+    classroom = setup_for_test()
+    classroom.add_student("Johnathan", 1)
+    classroom.add_student("Jessica", 2)
+    assert classroom.get_student_roster() == {"Johnathan": 1, "Jessica": 2}
+
+def test_add_assignment():
+    classroom = setup_for_test()
+    classroom.add_assignment("python hw")
+    assert classroom.assignment_roster[0] == "python hw"
+    assert len(classroom.assignment_roster) == 1
+    classroom.add_assignment("python quiz")
+    assert classroom.assignment_roster[1] == "python quiz"
+    assert len(classroom.assignment_roster) == 2

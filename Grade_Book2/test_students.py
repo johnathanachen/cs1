@@ -16,6 +16,15 @@ def test_add_assignment():
     student = setup_for_test()
     student.add_assignment("python101", 100)
     assert student.assignments["python101"] == 100
+    student.add_assignment("python challenge", None)
+    assert student.assignments["python challenge"] == None
+
+def test_get_assignment_grade():
+    student = setup_for_test()
+    student.add_assignment("Python Challenge", 100)
+    student.add_assignment("cs quiz", 95)
+    assert student.get_assignment_grade("Python Challenge") == 100
+    # Needs works
 
 def test_delete_assignment():
     student = setup_for_test()
@@ -23,3 +32,9 @@ def test_delete_assignment():
     student.add_assignment("cs quiz", 100)
     student.delete_assignment('python101')
     assert len(student.assignments) == 1 
+
+def test_assignment_roster():
+    student = setup_for_test()
+    student.add_assignment("python101", 100)
+    student.add_assignment("cs quiz", 100)
+    assert len(student.assignments) == 2
