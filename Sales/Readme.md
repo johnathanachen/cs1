@@ -14,7 +14,7 @@
      - `Philadelphia at $50,820,599.77`
 
 1. What is the average sales amount for credit card purchases?
-     - ``
+     - `$5026.70`
 
 1. How many purchases were made by bartering with baseball cards?
-     - ``
+     - `$25,007`

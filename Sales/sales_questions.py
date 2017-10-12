@@ -31,7 +31,8 @@ def main():
     # highest_value(filter_city("Palo"))
     # print("SF")
     # highest_value(filter_city("SF"))
-    credit_card_type()
+    # credit_card_type()
+    baseball_card_type()
 
     
     
@@ -175,6 +176,7 @@ def highest_value(filtered_city):
 def credit_card_type():
     all_credit_users = []
     all_prices = []
+    all_prices_no_dollar = []
     for item_set in arry_list:
         if item_set[2] == 'Credit':
             all_credit_users.append(item_set)
@@ -182,5 +184,23 @@ def credit_card_type():
     for i in all_credit_users:
         all_prices.append(i[3])
 
-    print(all_prices)
+    for digit in all_prices:
+        amount = list(digit)
+        del amount[0]
+        add_price = ''.join(amount)
+        all_prices_no_dollar.append(add_price)
+    total_price = round(sum(map(float, all_prices_no_dollar)),2)
+    print('$' + str(round(total_price/len(all_credit_users),2)), "is the average sales for credit card purchases")
+    
+
+def baseball_card_type():
+    baseball_card = []
+    cards = 0
+    # Filter for cards
+    for item_set in arry_list:
+        for single_word in item_set:
+            if 'Cards' == single_word:
+                cards = cards + 1
+    print("Baseball cards were used", cards, "many times for bartering")
+
 main()
