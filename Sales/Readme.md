@@ -5,7 +5,7 @@
     - `LA`
 
 1. Out of the entire data set, what is the total amount of money people have paid in cash?
-    - ``
+    - `$123,904,942.34`
 
 1. What is the most popular payment type in Oakland in March?
      - ``

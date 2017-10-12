@@ -2,7 +2,6 @@ import os
 
 with open('sales_data.txt', 'r') as dataSet:
     arry_list = []
-    add_price_list = []
     for word in dataSet:
         arry_list.append(word.split())
     
@@ -12,6 +11,7 @@ def main():
     cash_people()
 
 def get_total_amount():
+    add_price_list = []
     for item_set in arry_list:
         for single_word in item_set:
             for digit in single_word:
@@ -28,7 +28,6 @@ def highest_feb_city_sales():
     all_febs = []
     all_sets_with_feb = []
     all_feb_prices = []
-
     #get all febs
     for item_set in arry_list:
         for single_word in item_set:
@@ -54,6 +53,20 @@ def highest_feb_city_sales():
 
     
 def cash_people():
+    all_cash = []
+    no_dollar_sign_cash_list = []
+    for item_set in arry_list:
+        for single_word in item_set:
+            if 'Cash' == single_word:
+                if len(item_set) == 4:
+                    all_cash.append(item_set[3])
+                elif len(item_set) == 5:
+                     all_cash.append(item_set[4])
+    for price in all_cash:
+        no_dollar_sign_cash = price.replace('$', '')
+        no_dollar_sign_cash_list.append(no_dollar_sign_cash)
+    total_cash_amount = round(sum(map(float, no_dollar_sign_cash_list)),2)
+    print("$" + str(total_cash_amount))
 
-
+    
 main()
