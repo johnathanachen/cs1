@@ -24,7 +24,6 @@ def test_get_assignment_grade():
     student.add_assignment("Python Challenge", 100)
     student.add_assignment("cs quiz", 95)
     assert student.assignments["Python Challenge"] == 100
-    # Needs works
 
 def test_delete_assignment():
     student = setup_for_test()

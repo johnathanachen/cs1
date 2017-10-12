@@ -1,9 +1,9 @@
 class Student(object):
-    def __init__(self, name, student_ID):
+    def __init__(self, name, class_name):
         self.name = name
-        self.student_ID = student_ID
+        self.class_name = class_name
         self.assignments = {}
-        self.class_grade = int
+        self.class_grade = int        
 
     def add_assignment(self, assignment_name, grade):
             self.assignments[assignment_name] = grade

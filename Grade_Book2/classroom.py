@@ -5,12 +5,14 @@ class Classroom(object):
         self.name = name
         self.student_roster = {}
         self.assignment_roster = []
+        self.grade_book = {}
 
     def class_schedule(self, date, time):
         self.class_date = date
         self.class_time = time
         print(self.name, "is on", self.class_date, "at", self.class_time)
 
+    # Edit Students
     def add_student(self, name, ID):
         student = Student(name, ID)
         self.student_roster[name] = ID
@@ -22,8 +24,10 @@ class Classroom(object):
     def get_student_roster(self):
         print(self.student_roster)
 
+    # Edit Assignments
     def add_assignment(self, name):
         self.assignment_roster.append(name)
     
     def remove_assignment(self, name):
         self.assignment_roster.remove(name)
+    

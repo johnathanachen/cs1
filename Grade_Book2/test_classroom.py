@@ -23,11 +23,18 @@ def test_add_student():
     assert classroom.student_roster["Jessica"] == 2
     assert len(classroom.student_roster) == 2
 
+def test_remove_student():
+    classroom = setup_for_test()
+    classroom.add_student("Johnathan", 1)
+    classroom.add_student("Jessica", 2)
+    classroom.remove_student("Jessica")
+    assert len(classroom.student_roster) == 1
+
 def test_get_student_roster():
     classroom = setup_for_test()
     classroom.add_student("Johnathan", 1)
     classroom.add_student("Jessica", 2)
-    assert classroom.get_student_roster() == {"Johnathan": 1, "Jessica": 2}
+    assert classroom.student_roster == {"Johnathan": 1, "Jessica": 2}
 
 def test_add_assignment():
     classroom = setup_for_test()
@@ -37,3 +44,10 @@ def test_add_assignment():
     classroom.add_assignment("python quiz")
     assert classroom.assignment_roster[1] == "python quiz"
     assert len(classroom.assignment_roster) == 2
+
+def test_remove_assignment():
+    classroom = setup_for_test()
+    classroom.add_assignment("python hw")
+    classroom.add_assignment("python quiz")
+    classroom.remove_assignment("python hw")
+    assert len(classroom.assignment_roster) == 1
