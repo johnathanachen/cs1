@@ -11,8 +11,28 @@ def main():
     # cash_people()
     # oakland_payment_type()
     # get_cities(filter_months("4/"))
-    
-    highest_value(filter_city("Miami"))
+    # print("Miami")
+    # highest_value(filter_city("Miami"))
+    # print("Philadelphia")
+    # highest_value(filter_city("Philadelphia"))
+    # print("Oakland")
+    # highest_value(filter_city("Oakland"))
+    # print("Boston")
+    # highest_value(filter_city("Boston"))
+    # print("Kansas")
+    # highest_value(filter_city("Kansas"))
+    # print("NYC")
+    # highest_value(filter_city("NYC"))
+    # print("Ocala")
+    # highest_value(filter_city("Ocala"))
+    # print("LA")
+    # highest_value(filter_city("LA"))
+    # print("Palo")
+    # highest_value(filter_city("Palo"))
+    # print("SF")
+    # highest_value(filter_city("SF"))
+    credit_card_type()
+
     
     
 
@@ -131,6 +151,7 @@ def filter_city(city):
     for item_set in arry_list:
         if city in item_set:
             filtered_city.append(item_set)
+
     return filtered_city
 
 def highest_value(filtered_city):
@@ -151,4 +172,15 @@ def highest_value(filtered_city):
     highest_total_value = round(sum(map(float, float_prices)),2)
     print(highest_total_value)
 
+def credit_card_type():
+    all_credit_users = []
+    all_prices = []
+    for item_set in arry_list:
+        if item_set[2] == 'Credit':
+            all_credit_users.append(item_set)
+    
+    for i in all_credit_users:
+        all_prices.append(i[3])
+
+    print(all_prices)
 main()

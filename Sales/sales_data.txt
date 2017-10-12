@@ -1,5 +1,5 @@
 Philadelphia	8/24	Cash	$2025.97
-Oakland	1/18	Check	$9814.52
+Oakland	1/18	Check	$9814.52 
 Philadelphia	3/8	Credit	$7307.99
 Boston	5/19	Check	$5626.34
 Kansas City	11/5	Credit	$1528.12

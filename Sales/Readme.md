@@ -11,7 +11,7 @@
      - `Baseball Cards if it is a payment type, if not, it is cash`
 
 1. How many sales were made on 4/20, and which city had the highest sales value?
-     - ``
+     - `Philadelphia at $50,820,599.77`
 
 1. What is the average sales amount for credit card purchases?
      - ``
