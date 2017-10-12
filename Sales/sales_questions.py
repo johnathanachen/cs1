@@ -8,7 +8,13 @@ with open('sales_data.txt', 'r') as dataSet:
 def main():
     # get_total_amount()
     # highest_feb_city_sales()
-    cash_people()
+    # cash_people()
+    # oakland_payment_type()
+    # get_cities(filter_months("4/"))
+    
+    highest_value(filter_city("Miami"))
+    
+    
 
 def get_total_amount():
     add_price_list = []
@@ -68,5 +74,81 @@ def cash_people():
     total_cash_amount = round(sum(map(float, no_dollar_sign_cash_list)),2)
     print("$" + str(total_cash_amount))
 
-    
+def oakland_payment_type():
+    all_oakland = []
+    all_oakland_march = []
+    cash = 0
+    credit = 0
+    check = 0
+    cards = 0
+    # Filter for Oakland
+    for item_set in arry_list:
+        for single_word in item_set:
+            if 'Oakland' == single_word:
+                all_oakland.append(item_set)   
+
+    # Filter for March
+    for marches in all_oakland:
+        if '3/' in marches[1]:
+            all_oakland_march.append(marches)
+
+    # Count payment type occurrence 
+    for payment in all_oakland_march:
+        if len(payment) == 4:
+            if payment[2] == 'Cash':
+                cash = cash + 1
+            elif payment[2] == 'Credit':
+                credit = credit + 1
+            elif payment[2] == 'Check':
+                check = check + 1
+            elif payment[2] == 'Cards':
+                cards = cards + 1
+        elif len(payment) == 5:
+            if payment[3] == 'Cards':
+                cards = cards + 1
+    print(cash, "cash")
+    print(credit, "credit")
+    print(check, "check")
+    print(cards, "card")
+# Helper Methods ============================================================================================================
+def filter_months(month):
+    month_list = []
+    for item_set in arry_list:
+        for single_word in item_set:
+            if month in single_word:
+                month_list.append(item_set)   
+    return month_list
+
+def get_cities(month_list):
+    all_cities = []
+    for city_set in month_list:
+        all_cities.append(city_set[0])
+    filtered_cities = list(set(all_cities))
+    return filtered_cities
+
+def filter_city(city):
+    filtered_city = []
+    for item_set in arry_list:
+        if city in item_set:
+            filtered_city.append(item_set)
+    return filtered_city
+
+def highest_value(filtered_city):
+    all_prices = []
+    float_prices = []
+    for value in filtered_city:
+        if len(value) == 4:
+            all_prices.append(value[3])
+        elif len(value) == 5:
+            all_prices.append(value[4])
+
+    for price in all_prices:
+        digits = list(price)
+        digits.remove('$')
+        digits = ''.join(digits)
+        float_prices.append(digits)
+
+    highest_total_value = round(sum(map(float, float_prices)),2)
+    print(highest_total_value)
+
 main()

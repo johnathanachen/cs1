@@ -8,7 +8,7 @@
     - `$123,904,942.34`
 
 1. What is the most popular payment type in Oakland in March?
-     - ``
+     - `Baseball Cards if it is a payment type, if not, it is cash`
 
 1. How many sales were made on 4/20, and which city had the highest sales value?
      - ``
