@@ -49,10 +49,7 @@ def test_simulation_should_continue():
     population = ["one", "two"]
     assert True
 
+def test_run():
+    simulation = setup_for_test()
+    assert True
 
-# def if_simulation_should_continue_setup():
-#     return True
-
-# def test_run():
-#     check_continue = if_simulation_should_continue_setup()
-#     assert check_continue == True
