@@ -43,14 +43,12 @@ def test_create_population():
                 person_id += 1
     assert len(population) == 25
 
-# def test_simulation_should_continue():
-#     population_size = 0 
-#     population = []
-#     return False
-#     population_size = 1 
-#     return True
-#     population = ["John"]
-#     return True
+def test_simulation_should_continue():
+    simulation = setup_for_test()
+    population_size = 25
+    population = ["one", "two"]
+    assert True
+
 
 # def if_simulation_should_continue_setup():
 #     return True
