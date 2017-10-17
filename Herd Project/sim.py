@@ -8,6 +8,7 @@ class Simulation(object):
                 mortality_rate, basic_repro_num, initial_infected=1):
         self.population_size = population_size
         self.vacc_percentage = vacc_percentage
+        self.initial_infected = initial_infected
         self.population = []
         self.total_infected = 0
         self.current_infected = 0
