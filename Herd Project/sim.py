@@ -39,7 +39,25 @@ class Simulation(object):
                     population.append(Person(person_id, is_vaccinated=False, infected=False))
                     person_id += 1
 
-        return population
+        self.population = population
+  
+
+    def time_step(self):
+        print("started")
+    # TODO: Finish this method!  This method should contain all the basic logic
+    # for computing one time step in the simulation.  This includes:
+        for infected in self.population:
+            print(infected)
+        # - For each infected person in the population:
+        #        - Repeat for 100 total interactions:
+        #             - Grab a random person from the population.
+        #           - If the person is dead, continue and grab another new
+        #                 person from the population. Since we don't interact
+        #                 with dead people, this does not count as an interaction.
+        #           - Else:
+        #               - Call simulation.interaction(person, random_person)
+        #               - Increment interaction counter by 1.
+
 
 def start_this():
     pop_size = 25
@@ -51,4 +69,6 @@ def start_this():
 
     simulation = Simulation(pop_size, vacc_percentage, virus_name, mortality_rate,
                                 basic_repro_num, initial_infected)
+    
+    simulation.time_step()
 start_this()

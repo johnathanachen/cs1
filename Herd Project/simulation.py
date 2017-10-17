@@ -41,7 +41,7 @@ class Simulation(object):
                     self.population.append(Person(person_id, is_vaccinated=False, infected=False))
                     person_id += 1
 
-        return population
+        self.population = population
 
     def _simulation_should_continue(self):
         if population_size == 0 or len(population) == 0:

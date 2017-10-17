@@ -41,7 +41,7 @@ def test_create_population():
             elif rand_num > simulation.vacc_percentage:
                 population.append(Person(person_id, is_vaccinated=False, infected=False))
                 person_id += 1
-    assert len(population) == 25
+    assert person_id == 26
 
 def test_simulation_should_continue():
     simulation = setup_for_test()
