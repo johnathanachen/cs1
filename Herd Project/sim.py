@@ -7,6 +7,7 @@ class Simulation(object):
     def __init__(self, population_size, vacc_percentage, virus_name,
                 mortality_rate, basic_repro_num, initial_infected=1):
         self.population_size = population_size
+        self.vacc_percentage = vacc_percentage
         self.population = []
         self.total_infected = 0
         self.current_infected = 0
@@ -23,22 +24,24 @@ class Simulation(object):
         population = []
         infected_count = 0
         person_id = 1
-        print("worked")
         while len(population) != self.population_size:
             if infected_count !=  initial_infected:
                 population.append(Person(person_id, is_vaccinated=False, infected=True))
                 person_id += 1
-                infected_count += 1
-                pass              
+                infected_count += 1              
             else:
-                pass 
+                rand_num = random.randint(0,1)
+                if rand_num < self.vacc_percentage:
+                    population.append(Person(person_id, is_vaccinated=True, infected=False))
+                    person_id += 1
+                elif rand_num > self.vacc_percentage:
+                    population.append(Person(person_id, is_vaccinated=False, infected=False))
+                    person_id += 1
 
-        print(infected_count)
-        print(population)
         return population
 
 def start_this():
-    pop_size = 10
+    pop_size = 25
     vacc_percentage = 0.90              
     virus_name = "Ebola"
     mortality_rate = 0.70
