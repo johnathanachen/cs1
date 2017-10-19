@@ -23,6 +23,7 @@ class Simulation(object):
         self.logger = None
         self.newly_infected = []
 
+
     def _create_population(self, initial_infected):
         population = []
         infected_count = 0

@@ -12,7 +12,10 @@ class Person(object):
         return "<id:%s | infected:%s | alive:%s | vaccinated: %s>" % (self._id, self.infected, self.is_alive, self.is_vaccinated)
 
     def did_survive_infection():
-        # TODO:  Finish this method. Follow the instructions in the class documentation
-        # for resolve_infection.  If person dies, set is_alive to False and return False.
-        # If person lives, set is_vaccinated = True, infected = None, return True.  
-        pass
+        if self.is_alive == False:
+            return False
+        elif self.is_alive == True:
+            self.is_vaccinated = True
+            self.infected = None
+            return True
+

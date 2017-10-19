@@ -20,6 +20,8 @@ class Simulation(object):
         self.logger = None
         self.newly_infected = []
         self._create_population(initial_infected)
+        Log = Logger(self.file_name)
+        Log.write_metadata(pop_size=population_size, vacc_percentage=vacc_percentage, virus_name=virus_name, mortality_rate=mortality_rate, basic_repro_num=basic_repro_num)
 
     def _create_population(self, initial_infected):
         population = []
@@ -72,8 +74,7 @@ class Simulation(object):
                     person.infected = True
  
         self.newly_infected = []
-    #     # NOTE: Once you have iterated through the entire list of self.newly_infected, remember
-    #     # to reset self.newly_infected back to an empty list!
+
 
         
 def start_this():
@@ -84,8 +85,7 @@ def start_this():
     basic_repro_num = 0.25
     initial_infected = 10
 
-    simulation = Simulation(pop_size, vacc_percentage, virus_name, mortality_rate,
-                                basic_repro_num, initial_infected)
+    simulation = Simulation(pop_size, vacc_percentage, virus_name, mortality_rate, basic_repro_num, initial_infected)
     
     simulation.time_step()
     simulation._infect_newly_infected()

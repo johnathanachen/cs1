@@ -1,4 +1,5 @@
 {
+  "test_logger.py::test_write_metadata": true,
   "test_simulation.py::test__create_population": true,
   "test_simulation.py::test_create_population": true
 }
