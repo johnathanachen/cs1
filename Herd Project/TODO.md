@@ -1,0 +1,1 @@
+// log infection survival in sim.py
