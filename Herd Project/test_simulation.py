@@ -25,23 +25,8 @@ def test_setup():
 
 def test_create_population():
     simulation = setup_for_test()
-    population = []
-    infected_count = 0
-    person_id = 1
-    while len(population) != simulation.population_size:
-        if infected_count != simulation.initial_infected:
-            population.append(Person(person_id, is_vaccinated=False, infected=True))
-            person_id += 1
-            infected_count += 1              
-        else:
-            rand_num = random.randint(0,1)
-            if rand_num < simulation.vacc_percentage:
-                population.append(Person(person_id, is_vaccinated=True, infected=False))
-                person_id += 1
-            elif rand_num > simulation.vacc_percentage:
-                population.append(Person(person_id, is_vaccinated=False, infected=False))
-                person_id += 1
-    assert person_id == 26
+    # simulation._create_population(simulation.initial_infected)
+    assert len(simulation.population) == 25
 
 def test_simulation_should_continue():
     simulation = setup_for_test()

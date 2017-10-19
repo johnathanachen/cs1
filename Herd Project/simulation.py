@@ -58,18 +58,18 @@ class Simulation(object):
         print('The simulation has ended after {time_step_counter} turns.'.format(time_step_counter))
 
     def time_step(self):
-        # TODO: Finish this method!  This method should contain all the basic logic
-        # for computing one time step in the simulation.  This includes:
-            # - For each infected person in the population:
-            #        - Repeat for 100 total interactions:
-            #             - Grab a random person from the population.
-            #           - If the person is dead, continue and grab another new
-            #                 person from the population. Since we don't interact
-            #                 with dead people, this does not count as an interaction.
-            #           - Else:
-            #               - Call simulation.interaction(person, random_person)
-            #               - Increment interaction counter by 1.
-        pass
+        interaction_counter = 0
+        random_person = random.choice(self.population) #infected: false, alive: true
+        infected_list = []
+
+        for select_person in self.population:
+            if select_person.infected == True:
+                infected_list.append(select_person)
+
+        for select_person in self.population:
+            if random_person.is_alive == True and select_person.is_alive == True:
+                self.interaction(select_person, random_person)
+                interaction_counter += 1
 
     def interaction(self, person, random_person):
         # TODO: Finish this method! This method should be called any time two living

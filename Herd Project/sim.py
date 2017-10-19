@@ -1,5 +1,5 @@
 import random, sys
-random.seed(42)
+random.seed(44)
 from person import Person
 from logger import Logger
 
@@ -43,22 +43,44 @@ class Simulation(object):
   
 
     def time_step(self):
-        print("started")
-    # TODO: Finish this method!  This method should contain all the basic logic
-    # for computing one time step in the simulation.  This includes:
-        for infected in self.population:
-            print(infected)
-        # - For each infected person in the population:
-        #        - Repeat for 100 total interactions:
-        #             - Grab a random person from the population.
-        #           - If the person is dead, continue and grab another new
-        #                 person from the population. Since we don't interact
-        #                 with dead people, this does not count as an interaction.
-        #           - Else:
-        #               - Call simulation.interaction(person, random_person)
-        #               - Increment interaction counter by 1.
+        interaction_counter = 0
+        random_person = random.choice(self.population) #infected: false, alive: true
+        infected_list = []
 
+        for select_person in self.population:
+            if select_person.infected == True:
+                infected_list.append(select_person)
 
+        # for i in range(repeat_count): // run 100 times for each infected person
+        for select_person in self.population:
+            if random_person.is_alive == True and select_person.is_alive == True:
+                self.interaction(select_person, random_person)
+                interaction_counter += 1
+        
+
+    def interaction(self, person, random_person):
+        assert person.is_alive == True
+        assert random_person.is_alive == True
+
+        if random_person.infected == False and random_person.is_vaccinated == False:
+            random_num = random.random()
+            if random_num < self.basic_repro_num:
+                self.newly_infected.append(random_person._id)
+        
+        print(self.newly_infected)
+
+    # def _infect_newly_infected(self):
+    #     # TODO: Finish this method! This method should be called at the end of
+    #     # every time step.  This method should iterate through the list stored in
+    #     # self.newly_infected, which should be filled with the IDs of every person
+    #     # created.  Iterate though this list.
+    #     # For every person id in self.newly_infected:
+    #     #   - Find the Person object in self.population that has this corresponding ID.
+    #     #   - Set this Person's .infected attribute to True.
+    #     # NOTE: Once you have iterated through the entire list of self.newly_infected, remember
+    #     # to reset self.newly_infected back to an empty list!
+
+        
 def start_this():
     pop_size = 25
     vacc_percentage = 0.90              
