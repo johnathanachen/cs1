@@ -44,19 +44,17 @@ class Simulation(object):
 
     def time_step(self):
         interaction_counter = 0
-        random_person = random.choice(self.population) #infected: false, alive: true
         infected_list = []
 
         for select_person in self.population:
             if select_person.infected == True:
                 infected_list.append(select_person)
 
-        # for i in range(repeat_count): // run 100 times for each infected person
         for select_person in self.population:
+            random_person = random.choice(self.population)
             if random_person.is_alive == True and select_person.is_alive == True:
                 self.interaction(select_person, random_person)
                 interaction_counter += 1
-        
 
     def interaction(self, person, random_person):
         assert person.is_alive == True
@@ -66,23 +64,23 @@ class Simulation(object):
             random_num = random.random()
             if random_num < self.basic_repro_num:
                 self.newly_infected.append(random_person._id)
-        
-        print(self.newly_infected)
 
-    # def _infect_newly_infected(self):
-    #     # TODO: Finish this method! This method should be called at the end of
-    #     # every time step.  This method should iterate through the list stored in
-    #     # self.newly_infected, which should be filled with the IDs of every person
-    #     # created.  Iterate though this list.
-    #     # For every person id in self.newly_infected:
-    #     #   - Find the Person object in self.population that has this corresponding ID.
-    #     #   - Set this Person's .infected attribute to True.
+    def _infect_newly_infected(self):
+        for person_id in self.newly_infected:
+            print(person_id)
+            for person in self.population:
+                if person._id == person_id:
+                    person.infected = True
+                    print(person)
+            # if person_id in self.population:
+            #     person_id.infected = True
+
     #     # NOTE: Once you have iterated through the entire list of self.newly_infected, remember
     #     # to reset self.newly_infected back to an empty list!
 
         
 def start_this():
-    pop_size = 25
+    pop_size = 50
     vacc_percentage = 0.90              
     virus_name = "Ebola"
     mortality_rate = 0.70
@@ -93,4 +91,5 @@ def start_this():
                                 basic_repro_num, initial_infected)
     
     simulation.time_step()
+    simulation._infect_newly_infected()
 start_this()
