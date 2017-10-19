@@ -20,8 +20,8 @@ class Simulation(object):
         self.logger = None
         self.newly_infected = []
         self._create_population(initial_infected)
-        Log = Logger(self.file_name)
-        Log.write_metadata(pop_size=population_size, vacc_percentage=vacc_percentage, virus_name=virus_name, mortality_rate=mortality_rate, basic_repro_num=basic_repro_num)
+        log = Logger(self.file_name)
+        log.write_metadata(pop_size=population_size, vacc_percentage=vacc_percentage, virus_name=virus_name, mortality_rate=mortality_rate, basic_repro_num=basic_repro_num)
 
     def _create_population(self, initial_infected):
         population = []
@@ -42,9 +42,9 @@ class Simulation(object):
                     person_id += 1
 
         self.population = population
-  
 
     def time_step(self):
+        log = Logger(self.file_name)
         interaction_counter = 0
         infected_list = []
 
@@ -56,7 +56,9 @@ class Simulation(object):
             random_person = random.choice(self.population)
             if random_person.is_alive == True and select_person.is_alive == True:
                 self.interaction(select_person, random_person)
+                log.log_time_step(interaction_counter)
                 interaction_counter += 1
+        print(interaction_counter)
 
     def interaction(self, person, random_person):
         assert person.is_alive == True

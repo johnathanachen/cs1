@@ -1,13 +1,19 @@
+from pathlib import Path
+
 class Logger(object):
     def __init__(self, file_name):
         self.file_name = file_name
-        open(self.file_name, "w+")
+        self.tab = '\t+'
+        self.new_line = "\n"
+        my_file = Path(self.file_name)
+        if my_file.is_file():
+            open(self.file_name, "a+")
+        else:
+            open(self.file_name, "w+")
 
     def write_metadata(self, pop_size, vacc_percentage, virus_name, mortality_rate, basic_repro_num):
         meta = open(self.file_name, "a+")
-        tab = '\t+'
-        new_line = "\n"
-        metadata = [pop_size, tab, vacc_percentage, tab, virus_name, tab, mortality_rate, tab, basic_repro_num, new_line]
+        metadata = [pop_size, self.tab, vacc_percentage, self.tab, virus_name, self.tab, mortality_rate, self.tab, basic_repro_num, self.new_line]
         for i in metadata:
             meta.write(str(i))
 
@@ -27,13 +33,5 @@ class Logger(object):
         pass
 
     def log_time_step(self, time_step_number):
-        # TODO: Finish this method.  This method should log when a time step ends, and a
-        # new one begins.  See the documentation for more information on the format of the log.
-        # NOTE: Stretch challenge opportunity! Modify this method so that at the end of each time
-        # step, it also logs a summary of what happened in that time step, including the number of
-        # people infected, the number of people dead, etc.  You may want to create a helper class
-        # to compute these statistics for you, as a Logger's job is just to write logs!
-        # NOTE: Make sure to end every line with a '/n' character to ensure that each
-        # event logged ends up on a separate line!
-        pass
-
+        log_steps = open(self.file_name, "a+")
+        log_steps.write(str(time_step_number) + self.new_line)
