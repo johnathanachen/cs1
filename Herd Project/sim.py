@@ -67,14 +67,11 @@ class Simulation(object):
 
     def _infect_newly_infected(self):
         for person_id in self.newly_infected:
-            print(person_id)
             for person in self.population:
                 if person._id == person_id:
                     person.infected = True
-                    print(person)
-            # if person_id in self.population:
-            #     person_id.infected = True
-
+ 
+        self.newly_infected = []
     #     # NOTE: Once you have iterated through the entire list of self.newly_infected, remember
     #     # to reset self.newly_infected back to an empty list!
 
