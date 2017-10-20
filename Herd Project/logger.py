@@ -27,9 +27,12 @@ class Logger(object):
 
     def log_infection_death(self, person):
         log_infection = open(self.file_name, "a+")
-        log_infection.write("ID: %s\t died from Infection" % (person._id))
-     
+        log_infection.write("ID: %s\t died from Infection \n" % (person._id))
 
+    def log_survived(self, person):
+        log_survived = open(self.file_name, "a+")
+        log_survived.write("ID: %s\t survived the Infection \n" % (person._id))
+     
     def log_vaccinated(self, person):
         log_vaccinated = open(self.file_name, "a+")
         log_vaccinated.write("ID: %s is Vaccinated\n" % (person._id))

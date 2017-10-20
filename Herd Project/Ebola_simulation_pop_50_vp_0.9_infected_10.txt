@@ -1,0 +1,141 @@
+Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
+ID: 0 is initially infected 
+ID: 1 is initially infected 
+ID: 2 is initially infected 
+ID: 3 is initially infected 
+ID: 4 is initially infected 
+ID: 5 is initially infected 
+ID: 6 is initially infected 
+ID: 7 is initially infected 
+ID: 8 is initially infected 
+ID: 9 is initially infected 
+ID: 0 is Vaccinated
+ID: 2 is Vaccinated
+ID: 2 is Vaccinated
+ID: 1 is Vaccinated
+ID: 2 is Vaccinated
+ID: 29 is Infected by 2
+ID: 0	 survived the Infection 
+ID: 6 is Vaccinated
+ID: 1 is Vaccinated
+ID: 7 is Vaccinated
+ID: 8 is Vaccinated
+ID: 42 is Infected by 2
+ID: 0	 survived the Infection 
+ID: 0 is Vaccinated
+ID: 5 is Vaccinated
+ID: 42 is Vaccinated
+ID: 6 is Vaccinated
+ID: 30 is Infected by 4
+ID: 0	 died from Infection 
+Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
+ID: 0 is initially infected 
+ID: 1 is initially infected 
+ID: 2 is initially infected 
+ID: 3 is initially infected 
+ID: 4 is initially infected 
+ID: 5 is initially infected 
+ID: 6 is initially infected 
+ID: 7 is initially infected 
+ID: 8 is initially infected 
+ID: 9 is initially infected 
+ID: 0 is Vaccinated
+ID: 0 is Vaccinated
+ID: 18 is Infected by 1
+ID: 0	 survived the Infection 
+ID: 0 is Vaccinated
+ID: 41 is Infected by 2
+ID: 0	 survived the Infection 
+ID: 38 is Infected by 4
+ID: 0	 survived the Infection 
+ID: 0 is Vaccinated
+ID: 1 is Vaccinated
+ID: 1 is Vaccinated
+ID: 32 is Infected by 5
+ID: 0	 survived the Infection 
+ID: 9 is Vaccinated
+ID: 9 is Vaccinated
+ID: 36 is Infected by 2
+ID: 0	 survived the Infection 
+ID: 7 is Vaccinated
+ID: 25 is Infected by 18
+ID: 0	 survived the Infection 
+ID: 31 is Infected by 25
+ID: 0	 survived the Infection 
+ID: 41 is Vaccinated
+ID: 18 is Vaccinated
+ID: 9 is Vaccinated
+Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
+ID: 0 is initially infected 
+ID: 1 is initially infected 
+ID: 2 is initially infected 
+ID: 3 is initially infected 
+ID: 4 is initially infected 
+ID: 5 is initially infected 
+ID: 6 is initially infected 
+ID: 7 is initially infected 
+ID: 8 is initially infected 
+ID: 9 is initially infected 
+ID: 1 is Vaccinated
+ID: 2 is Vaccinated
+ID: 1 is Vaccinated
+ID: 0 is Vaccinated
+ID: 0 is Vaccinated
+ID: 42 is Infected by 4
+ID: 0	 survived the Infection 
+ID: 2 is Vaccinated
+ID: 1 is Vaccinated
+ID: 6 is Vaccinated
+ID: 6 is Vaccinated
+ID: 3 is Vaccinated
+ID: 2 is Vaccinated
+ID: 25 is Infected by 7
+ID: 0	 survived the Infection 
+ID: 17 is Infected by 6
+ID: 0	 survived the Infection 
+ID: 20 is Infected by 17
+ID: 0	 died from Infection 
+Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
+ID: 0 is initially infected 
+ID: 1 is initially infected 
+ID: 2 is initially infected 
+ID: 3 is initially infected 
+ID: 4 is initially infected 
+ID: 5 is initially infected 
+ID: 6 is initially infected 
+ID: 7 is initially infected 
+ID: 8 is initially infected 
+ID: 9 is initially infected 
+ID: 0 is Vaccinated
+ID: 26 is Infected by 3
+ID: 0	 survived the Infection 
+ID: 3 is Vaccinated
+ID: 11 is Infected by 0
+ID: 0	 died from Infection 
+Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
+ID: 0 is initially infected 
+ID: 1 is initially infected 
+ID: 2 is initially infected 
+ID: 3 is initially infected 
+ID: 4 is initially infected 
+ID: 5 is initially infected 
+ID: 6 is initially infected 
+ID: 7 is initially infected 
+ID: 8 is initially infected 
+ID: 9 is initially infected 
+ID: 0 is Vaccinated
+ID: 0 is Vaccinated
+ID: 0 is Vaccinated
+ID: 1 is Vaccinated
+ID: 0 is Vaccinated
+ID: 0 is Vaccinated
+ID: 0 is Vaccinated
+ID: 2 is Vaccinated
+ID: 1 is Vaccinated
+ID: 0 is Vaccinated
+ID: 0 is Vaccinated
+ID: 4 is Vaccinated
+ID: 1 is Vaccinated
+ID: 1 is Vaccinated
+ID: 48 is Infected by 1
+ID: 0	 died from Infection 

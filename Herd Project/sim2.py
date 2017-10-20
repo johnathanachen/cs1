@@ -12,6 +12,7 @@ class Simulation(object):
         self.population = []
         self.vaccinated = []
         self.grave_yard = []
+        self.time_step_counter = 0
         self.person_id = 0
         self.total_infected = 0
         self.virus_name = virus_name
@@ -47,20 +48,19 @@ class Simulation(object):
             return False
         else:
             for i in self.population:
-                if i.infected == True:
+                if i.infected == True and i.is_alive == True:
                     print("keep going")
                     return True
-                elif i.infected == False:
+                elif i.infected == False and i.is_alive == True:
                     print("all cured")
                     return False 
 
     def run(self):
-        time_step_counter = 0
         if self._simulation_should_continue() == True:
-            time_step_counter += 1
+            self.time_step_counter += 1
             self.time_step()
         elif self._simulation_should_continue() == False:
-            print('The simulation has ended after %s turns.' % (time_step_counter))
+            print('The simulation has ended after %s turns.' % (self.time_step_counter))
 
     def time_step(self):
         log = Logger(self.file_name)
@@ -86,7 +86,6 @@ class Simulation(object):
                 did_infect = True
                 log.log_infected(person, random_person)
                 random_person.infected = True
-                self.newly_infected.append(random_person._id)
                 self.infection_death()
             else:
                 did_infect = False
@@ -101,8 +100,16 @@ class Simulation(object):
         for person in self.population:
             if random_num > self.mortality_rate:
                 person.is_alive = False
+                person.is_vaccinated = False
                 log.log_infection_death(person)
-                
+                self.grave_yard()
+            else:
+                person.is_vaccinated = True
+                person.is_alive = True
+                log.log_survived(person)
+                self.run()
+    
+    def grave_yard(self):
         for person in self.population:
             if person.is_alive == False and person not in self.grave_yard:
                 self.grave_yard.append(person)
