@@ -52,3 +52,8 @@ class Logger(object):
     def log_time_step(self, time_step_number):
         log_steps = open(self.file_name, "a+")
         log_steps.write("Step: %s\n" % (time_step_number))
+
+    def log_cured(self, time_step_counter):
+        log = open(self.file_name, "a+")
+        log.write("Population Cured \n")
+        log.write('The simulation has ended after %s turns. \n' % (time_step_counter))

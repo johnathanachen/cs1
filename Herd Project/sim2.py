@@ -55,12 +55,12 @@ class Simulation(object):
         self.run()
 
     def _simulation_should_continue(self):
+        log = Logger(self.file_name)
         if self.death_count == len(self.population):
             print("all died")
             print('The simulation has ended after %s turns.' % (self.time_step_counter))            
         elif self.death_count + self.vacc_count == len(self.population):
-            print("all cured")
-            print('The simulation has ended after %s turns.' % (self.time_step_counter))
+            log.log_cured(self.time_step_counter)
         else:
             print("keep going")
             self.time_step()
@@ -72,7 +72,7 @@ class Simulation(object):
     def time_step(self):
         self._infected_person()
         self._random_person()
-        self.interaction(self.current_person, self.random_person)
+        self.interaction(self.current_person, self.current_random_person)
         
     def _infected_person(self):
         for person in self.population:
@@ -81,8 +81,8 @@ class Simulation(object):
 
     def _random_person(self):
         for random_person in self.population:
-            if random_person.infected = False and random_person.is_alive == True and random_person.is_vaccinated == False:
-                self.current_random_person = person
+            if random_person.infected == False and random_person.is_alive == True and random_person.is_vaccinated == False:
+                self.current_random_person = random_person
         
     def interaction(self, person, random_person):
         log = Logger(self.file_name)
