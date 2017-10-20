@@ -1,5 +1,0 @@
-Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
-Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
-Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
-Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
-Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25

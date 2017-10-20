@@ -9,7 +9,7 @@ class Person(object):
         self.infected = infected
 
     def __repr__(self):
-        return "<id:%s | infected:%s | alive:%s | vaccinated: %s>" % (self._id, self.infected, self.is_alive, self.is_vaccinated)
+        return "<alive:%s | vaccinated: %s>" % (self.is_alive, self.is_vaccinated)
 
     def first_infected(self):
         if self.infected == True:
