@@ -6,35 +6,35 @@ ID: 3 is initially infected
 ID: 4 is initially infected 
 ID: 6 is initially created 
 ID: 7 is initially created 
-ID: 8 is initially vaccinated 
-ID: 9 is initially created 
-ID: 10 is initially vaccinated 
+ID: 8 is initially created 
+ID: 9 is initially vaccinated 
+ID: 10 is initially created 
 ID: 11 is initially created 
-ID: 12 is initially created 
-ID: 13 is initially vaccinated 
-ID: 14 is initially vaccinated 
+ID: 12 is initially vaccinated 
+ID: 13 is initially created 
+ID: 14 is initially created 
 ID: 15 is initially created 
 ID: 16 is initially created 
-ID: 17 is initially vaccinated 
+ID: 17 is initially created 
 ID: 18 is initially vaccinated 
-ID: 19 is initially created 
-ID: 20 is initially vaccinated 
-ID: 21 is initially vaccinated 
-ID: 22 is initially created 
+ID: 19 is initially vaccinated 
+ID: 20 is initially created 
+ID: 21 is initially created 
+ID: 22 is initially vaccinated 
 ID: 23 is initially created 
 ID: 24 is initially vaccinated 
 ID: 25 is initially vaccinated 
 ID: 26 is initially created 
-ID: 27 is initially created 
+ID: 27 is initially vaccinated 
 ID: 28 is initially created 
-ID: 29 is initially created 
+ID: 29 is initially vaccinated 
 ID: 30 is initially vaccinated 
 ID: 31 is initially created 
-ID: 32 is initially created 
-ID: 33 is initially vaccinated 
-ID: 34 is initially vaccinated 
+ID: 32 is initially vaccinated 
+ID: 33 is initially created 
+ID: 34 is initially created 
 ID: 35 is initially created 
-ID: 36 is initially vaccinated 
+ID: 36 is initially created 
 ID: 37 is initially created 
 ID: 38 is initially vaccinated 
 ID: 39 is initially created 
@@ -47,170 +47,167 @@ ID: 45 is initially vaccinated
 ID: 46 is initially created 
 ID: 47 is initially vaccinated 
 ID: 48 is initially vaccinated 
-ID: 49 is initially created 
-ID: 50 is initially created 
-Initial // Infected: 5	 Vaccinated: 20	 Normal: 25	 
-ID: 4 is matched with ID: 49
-Step: 1
-ID: 49 is Vaccinated
-ID: 4 is matched with ID: 48
-Step: 2
-ID: 48 is Vaccinated
+ID: 49 is initially vaccinated 
+ID: 50 is initially vaccinated 
+Initial // Infected: 5	 Vaccinated: 19	 Normal: 26	 
 ID: 4 is matched with ID: 45
-Step: 3
+===================== Step: 1 =====================
 ID: 45 is Vaccinated
 ID: 4 is matched with ID: 43
-Step: 4
+===================== Step: 2 =====================
 ID: 43 is Vaccinated
 ID: 4 is matched with ID: 42
-Step: 5
-ID: 42 is Vaccinated
+===================== Step: 3 =====================
+ID: 42 is Infected by 4
+ID: 42 survived the Infection from ID: 4
 ID: 4 is matched with ID: 41
-Step: 6
+===================== Step: 4 =====================
 ID: 41 is Vaccinated
 ID: 4 is matched with ID: 38
-Step: 7
+===================== Step: 5 =====================
 ID: 38 is Vaccinated
 ID: 4 is matched with ID: 36
-Step: 8
-ID: 36 is Vaccinated
+===================== Step: 6 =====================
+ID: 36 is Infected by 4
+ID: 36 survived the Infection from ID: 4
+ID: 4 is matched with ID: 35
+===================== Step: 7 =====================
+ID: 35 is Vaccinated
 ID: 4 is matched with ID: 34
-Step: 9
+===================== Step: 8 =====================
 ID: 34 is Vaccinated
-ID: 4 is matched with ID: 31
-Step: 10
-ID: 31 is Infected by 4
-ID: 31	 died from Infection 
+ID: 4 is matched with ID: 33
+===================== Step: 9 =====================
+ID: 33 is Vaccinated
+ID: 4 is matched with ID: 32
+===================== Step: 10 =====================
+ID: 32 is Infected by 4
+ID: 32	 died from Infection 
 ID: 4 is matched with ID: 30
-Step: 11
+===================== Step: 11 =====================
 ID: 30 is Vaccinated
-ID: 4 is matched with ID: 28
-Step: 12
-ID: 28 is Infected by 4
-ID: 28 survived the Infection from ID: 4
 ID: 4 is matched with ID: 27
-Step: 13
-ID: 27 is Infected by 4
-ID: 27 survived the Infection from ID: 4
-ID: 4 is matched with ID: 26
-Step: 14
-ID: 26 is Vaccinated
+===================== Step: 12 =====================
+ID: 27 is Vaccinated
 ID: 4 is matched with ID: 25
-Step: 15
+===================== Step: 13 =====================
 ID: 25 is Vaccinated
 ID: 4 is matched with ID: 22
-Step: 16
+===================== Step: 14 =====================
 ID: 22 is Vaccinated
-ID: 4 is matched with ID: 21
-Step: 17
-ID: 21 is Vaccinated
-ID: 4 is matched with ID: 18
-Step: 18
-ID: 18 is Vaccinated
+ID: 4 is matched with ID: 20
+===================== Step: 15 =====================
+ID: 20 is Infected by 4
+ID: 20 survived the Infection from ID: 4
+ID: 4 is matched with ID: 19
+===================== Step: 16 =====================
+ID: 19 is Vaccinated
+ID: 4 is matched with ID: 16
+===================== Step: 17 =====================
+ID: 16 is Infected by 4
+ID: 16 survived the Infection from ID: 4
 ID: 4 is matched with ID: 15
-Step: 19
+===================== Step: 18 =====================
 ID: 15 is Vaccinated
 ID: 4 is matched with ID: 14
-Step: 20
+===================== Step: 19 =====================
 ID: 14 is Vaccinated
-ID: 4 is matched with ID: 11
-Step: 21
-ID: 11 is Vaccinated
+ID: 4 is matched with ID: 13
+===================== Step: 20 =====================
+ID: 13 is Vaccinated
+ID: 4 is matched with ID: 12
+===================== Step: 21 =====================
+ID: 12 is Vaccinated
 ID: 4 is matched with ID: 10
-Step: 22
-ID: 10 is Vaccinated
-ID: 4 is matched with ID: 8
-Step: 23
-ID: 8 is Infected by 4
-ID: 8	 died from Infection 
+===================== Step: 22 =====================
+ID: 10 is Infected by 4
+ID: 10 survived the Infection from ID: 4
+ID: 4 is matched with ID: 9
+===================== Step: 23 =====================
+ID: 9 is Vaccinated
+ID: 4 is matched with ID: 7
+===================== Step: 24 =====================
+ID: 7 is Vaccinated
 ID: 4 is matched with ID: 6
-Step: 24
+===================== Step: 25 =====================
 ID: 6 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 25
+===================== Step: 26 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 26
-ID: 5 is Infected by 4
-ID: 5	 died from Infection 
-ID: 4 is matched with ID: 5
-Step: 27
+===================== Step: 27 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 28
-ID: 5 is Infected by 4
-ID: 5	 died from Infection 
-ID: 4 is matched with ID: 5
-Step: 29
+===================== Step: 28 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 30
-ID: 5 is Infected by 4
-ID: 5 survived the Infection from ID: 4
-ID: 4 is matched with ID: 5
-Step: 31
-ID: 5 is Infected by 4
-ID: 5	 died from Infection 
-ID: 4 is matched with ID: 5
-Step: 32
-ID: 5 is Infected by 4
-ID: 5	 died from Infection 
-ID: 4 is matched with ID: 5
-Step: 33
+===================== Step: 29 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 34
+===================== Step: 30 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 35
+===================== Step: 31 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 36
+===================== Step: 32 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 37
-ID: 5 is Infected by 4
-ID: 5	 died from Infection 
-ID: 4 is matched with ID: 5
-Step: 38
+===================== Step: 33 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 39
+===================== Step: 34 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 40
+===================== Step: 35 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 41
+===================== Step: 36 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 42
+===================== Step: 37 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 43
-ID: 5 is Infected by 4
-ID: 5	 died from Infection 
-ID: 4 is matched with ID: 5
-Step: 44
+===================== Step: 38 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 45
+===================== Step: 39 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 46
+===================== Step: 40 =====================
+ID: 5 is Vaccinated
+ID: 4 is matched with ID: 5
+===================== Step: 41 =====================
 ID: 5 is Infected by 4
 ID: 5 survived the Infection from ID: 4
 ID: 4 is matched with ID: 5
-Step: 47
+===================== Step: 42 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 48
+===================== Step: 43 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 49
+===================== Step: 44 =====================
+ID: 5 is Infected by 4
+ID: 5	 died from Infection 
+ID: 4 is matched with ID: 5
+===================== Step: 45 =====================
 ID: 5 is Vaccinated
 ID: 4 is matched with ID: 5
-Step: 50
+===================== Step: 46 =====================
+ID: 5 is Vaccinated
+ID: 4 is matched with ID: 5
+===================== Step: 47 =====================
+ID: 5 is Vaccinated
+ID: 4 is matched with ID: 5
+===================== Step: 48 =====================
+ID: 5 is Vaccinated
+ID: 4 is matched with ID: 5
+===================== Step: 49 =====================
+ID: 5 is Infected by 4
+ID: 5 survived the Infection from ID: 4
+ID: 4 is matched with ID: 5
+===================== Step: 50 =====================
 ID: 5 is Vaccinated
 Population Cured 
 The simulation has ended after 51 turns. 
