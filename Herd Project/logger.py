@@ -29,9 +29,9 @@ class Logger(object):
         initial = open(self.file_name, "a+")
         initial.write("ID: %s is initially created \n" % (person_id))
 
-    def log_interaction(self, person1, person2, did_infect=None, person2_vacc=None, person2_sick=None):
+    def log_interaction(self, person, random_person):
         interaction = open(self.file_name, "a+")
-        interaction.write("ID-1: %s\t ID-2: %s\t Infect: %s\t ID-2 Vacc: %s\t ID-2 Infected: %s\n" % (person1._id, person2._id, did_infect, person2_vacc, person2_sick))
+        interaction.write("ID: %s is matched with ID: %s\n" % (person._id, random_person._id))
 
     def log_infected(self, person, random_person):
         log_infected = open(self.file_name, "a+")
@@ -43,7 +43,7 @@ class Logger(object):
 
     def log_survived(self, random, person):
         log_survived = open(self.file_name, "a+")
-        log_survived.write("ID: %s\t survived the Infection from ID: %s\n" % (random._id, person._id))
+        log_survived.write("ID: %s survived the Infection from ID: %s\n" % (random._id, person._id))
      
     def log_vaccinated(self, person):
         log_vaccinated = open(self.file_name, "a+")

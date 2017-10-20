@@ -58,9 +58,11 @@ class Simulation(object):
         log = Logger(self.file_name)
         if self.death_count == len(self.population):
             log.log_all_dead(self.time_step_counter)
+            print("Population 0")
             print('The simulation has ended after %s turns.' % (self.time_step_counter))            
         elif self.death_count + self.vacc_count == len(self.population):
             log.log_cured(self.time_step_counter)
+            print("Virus Spread Eliminated")
             print('The simulation has ended after %s turns.' % (self.time_step_counter)) 
         else:
             print("keep going")
@@ -87,6 +89,7 @@ class Simulation(object):
         
     def interaction(self, person, random_person):
         log = Logger(self.file_name)
+        log.log_interaction(person, random_person)
         did_infect = None
         random_vaccinated = None
         self.interaction_counter += 1
@@ -106,13 +109,16 @@ class Simulation(object):
             else:
                 random_person.is_vaccinated = True
                 random_person.is_alive = True
+                random_person.infected = False
                 log.log_survived(random_person, person)
                 self.vacc_count += 1
                 self.run()
         else:
             did_infect = False
             random_person.is_vaccinated = True
-            log.log_vaccinated(person)
+            random_person.is_alive = True
+            random_person.infected = False
+            log.log_vaccinated(random_person)
             self.vacc_count += 1
             self.run()
 
