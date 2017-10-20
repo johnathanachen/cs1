@@ -57,3 +57,8 @@ class Logger(object):
         log = open(self.file_name, "a+")
         log.write("Population Cured \n")
         log.write('The simulation has ended after %s turns. \n' % (time_step_counter))
+    
+    def log_all_dead(self, time_step_counter):
+        log = open(self.file_name, "a+")
+        log.write("Population 0 \n")
+        log.write('The simulation has ended after %s turns. \n' % (time_step_counter))

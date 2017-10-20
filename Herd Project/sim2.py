@@ -57,10 +57,11 @@ class Simulation(object):
     def _simulation_should_continue(self):
         log = Logger(self.file_name)
         if self.death_count == len(self.population):
-            print("all died")
+            log.log_all_dead(self.time_step_counter)
             print('The simulation has ended after %s turns.' % (self.time_step_counter))            
         elif self.death_count + self.vacc_count == len(self.population):
             log.log_cured(self.time_step_counter)
+            print('The simulation has ended after %s turns.' % (self.time_step_counter)) 
         else:
             print("keep going")
             self.time_step()

@@ -1,0 +1,162 @@
+Pop size: 50	 Vacc percent: 0.9	 Virus: Ebola	 Mortality rate: 0.7	 Repro num: 0.25
+ID: 0 is initially infected 
+ID: 1 is initially infected 
+ID: 2 is initially infected 
+ID: 3 is initially infected 
+ID: 4 is initially infected 
+ID: 6 is initially vaccinated 
+ID: 7 is initially vaccinated 
+ID: 8 is initially created 
+ID: 9 is initially created 
+ID: 10 is initially vaccinated 
+ID: 11 is initially created 
+ID: 12 is initially created 
+ID: 13 is initially created 
+ID: 14 is initially created 
+ID: 15 is initially vaccinated 
+ID: 16 is initially created 
+ID: 17 is initially created 
+ID: 18 is initially vaccinated 
+ID: 19 is initially created 
+ID: 20 is initially vaccinated 
+ID: 21 is initially created 
+ID: 22 is initially vaccinated 
+ID: 23 is initially vaccinated 
+ID: 24 is initially vaccinated 
+ID: 25 is initially created 
+ID: 26 is initially vaccinated 
+ID: 27 is initially created 
+ID: 28 is initially created 
+ID: 29 is initially vaccinated 
+ID: 30 is initially created 
+ID: 31 is initially vaccinated 
+ID: 32 is initially vaccinated 
+ID: 33 is initially vaccinated 
+ID: 34 is initially created 
+ID: 35 is initially created 
+ID: 36 is initially vaccinated 
+ID: 37 is initially vaccinated 
+ID: 38 is initially created 
+ID: 39 is initially created 
+ID: 40 is initially created 
+ID: 41 is initially vaccinated 
+ID: 42 is initially created 
+ID: 43 is initially vaccinated 
+ID: 44 is initially created 
+ID: 45 is initially created 
+ID: 46 is initially created 
+ID: 47 is initially vaccinated 
+ID: 48 is initially vaccinated 
+ID: 49 is initially created 
+ID: 50 is initially vaccinated 
+Initial // Infected: 5	 Vaccinated: 21	 Normal: 24	 
+Step: 1
+ID: 48 is Infected by 4
+ID: 48	 died from Infection 
+Step: 2
+ID: 4 is Vaccinated
+Step: 3
+ID: 4 is Vaccinated
+Step: 4
+ID: 43 is Infected by 4
+ID: 43	 survived the Infection from ID: 4
+Step: 5
+ID: 4 is Vaccinated
+Step: 6
+ID: 4 is Vaccinated
+Step: 7
+ID: 4 is Vaccinated
+Step: 8
+ID: 4 is Vaccinated
+Step: 9
+ID: 4 is Vaccinated
+Step: 10
+ID: 4 is Vaccinated
+Step: 11
+ID: 4 is Vaccinated
+Step: 12
+ID: 4 is Vaccinated
+Step: 13
+ID: 4 is Vaccinated
+Step: 14
+ID: 4 is Vaccinated
+Step: 15
+ID: 4 is Vaccinated
+Step: 16
+ID: 4 is Vaccinated
+Step: 17
+ID: 16 is Infected by 4
+ID: 16	 survived the Infection from ID: 4
+Step: 18
+ID: 4 is Vaccinated
+Step: 19
+ID: 4 is Vaccinated
+Step: 20
+ID: 4 is Vaccinated
+Step: 21
+ID: 4 is Vaccinated
+Step: 22
+ID: 4 is Vaccinated
+Step: 23
+ID: 4 is Vaccinated
+Step: 24
+ID: 4 is Vaccinated
+Step: 25
+ID: 4 is Vaccinated
+Step: 26
+ID: 4 is Vaccinated
+Step: 27
+ID: 4 is Vaccinated
+Step: 28
+ID: 4 is Vaccinated
+Step: 29
+ID: 4 is Vaccinated
+Step: 30
+ID: 4 is Vaccinated
+Step: 31
+ID: 4 is Vaccinated
+Step: 32
+ID: 7 is Infected by 4
+ID: 7	 survived the Infection from ID: 4
+Step: 33
+ID: 4 is Vaccinated
+Step: 34
+ID: 7 is Infected by 4
+ID: 7	 survived the Infection from ID: 4
+Step: 35
+ID: 4 is Vaccinated
+Step: 36
+ID: 7 is Infected by 4
+ID: 7	 died from Infection 
+Step: 37
+ID: 4 is Vaccinated
+Step: 38
+ID: 4 is Vaccinated
+Step: 39
+ID: 4 is Vaccinated
+Step: 40
+ID: 4 is Vaccinated
+Step: 41
+ID: 7 is Infected by 4
+ID: 7	 died from Infection 
+Step: 42
+ID: 4 is Vaccinated
+Step: 43
+ID: 4 is Vaccinated
+Step: 44
+ID: 4 is Vaccinated
+Step: 45
+ID: 4 is Vaccinated
+Step: 46
+ID: 4 is Vaccinated
+Step: 47
+ID: 4 is Vaccinated
+Step: 48
+ID: 4 is Vaccinated
+Step: 49
+ID: 4 is Vaccinated
+Step: 50
+ID: 7 is Infected by 4
+ID: 7	 survived the Infection from ID: 4
+Population Cured 
+The simulation has ended after 51 turns. 
