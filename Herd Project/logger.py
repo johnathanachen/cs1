@@ -13,9 +13,21 @@ class Logger(object):
         meta = open(self.file_name, "a+")
         meta.write("Pop size: %s\t Vacc percent: %s\t Virus: %s\t Mortality rate: %s\t Repro num: %s\n" % (pop_size, vacc_percentage, virus_name, mortality_rate, basic_repro_num))
 
+    def log_init(self, infected, vacc, normal):
+        initial = open(self.file_name, "a+")
+        initial.write("Initial // Infected: %s\t Vaccinated: %s\t Normal: %s\t \n" % (infected, vacc, normal))
+    
     def log_initial_infected(self, person_id):
         initial = open(self.file_name, "a+")
         initial.write("ID: %s is initially infected \n" % (person_id))
+    
+    def log_initial_vaccinated(self, person_id):
+        initial = open(self.file_name, "a+")
+        initial.write("ID: %s is initially vaccinated \n" % (person_id))
+    
+    def log_initial_created(self, person_id):
+        initial = open(self.file_name, "a+")
+        initial.write("ID: %s is initially created \n" % (person_id))
 
     def log_interaction(self, person1, person2, did_infect=None, person2_vacc=None, person2_sick=None):
         interaction = open(self.file_name, "a+")
@@ -29,9 +41,9 @@ class Logger(object):
         log_infection = open(self.file_name, "a+")
         log_infection.write("ID: %s\t died from Infection \n" % (person._id))
 
-    def log_survived(self, person):
+    def log_survived(self, random, person):
         log_survived = open(self.file_name, "a+")
-        log_survived.write("ID: %s\t survived the Infection \n" % (person._id))
+        log_survived.write("ID: %s\t survived the Infection from ID: %s\n" % (random._id, person._id))
      
     def log_vaccinated(self, person):
         log_vaccinated = open(self.file_name, "a+")

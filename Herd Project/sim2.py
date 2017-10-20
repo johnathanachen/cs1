@@ -10,11 +10,14 @@ class Simulation(object):
         self.vacc_percentage = vacc_percentage
         self.initial_infected = initial_infected
         self.population = []
-        self.vaccinated = []
-        self.grave_yard = []
+        self.vacc_count = 0
+        self.death_count = 0
+        self.interaction_counter = 0
         self.time_step_counter = 0
         self.person_id = 0
         self.total_infected = 0
+        self.current_person = 0
+        self.current_random_person = 0
         self.virus_name = virus_name
         self.mortality_rate = mortality_rate
         self.basic_repro_num = basic_repro_num
@@ -25,99 +28,92 @@ class Simulation(object):
         self._create_population(initial_infected)
 
     def _create_population(self, initial_infected):
+        log = Logger(self.file_name)
+        self.init_infected_count = 0
+        self.init_vacc_count = 0
+        self.init_created_count = 0
         while len(self.population) != self.population_size:
             if self.total_infected !=  self.initial_infected:
                 self.population.append(Person(self.person_id, is_vaccinated=False, infected=True))
-                log = Logger(self.file_name)
                 log.log_initial_infected(self.person_id)
                 self.person_id += 1
+                self.init_infected_count += 1
                 self.total_infected += 1              
             else:
                 rand_num = random.randint(0,1)
-                if rand_num < self.vacc_percentage:
+                if round(rand_num,2) < self.vacc_percentage:
                     self.population.append(Person(self.person_id, is_vaccinated=True, infected=False))
                     self.person_id += 1
-                elif rand_num > self.vacc_percentage:
+                    self.init_vacc_count += 1
+                    log.log_initial_vaccinated(self.person_id)
+                elif round(rand_num,2) > self.vacc_percentage:
                     self.population.append(Person(self.person_id, is_vaccinated=False, infected=False))
                     self.person_id += 1
+                    self.init_created_count += 1
+                    log.log_initial_created(self.person_id)
+        log.log_init(self.init_infected_count,self.init_vacc_count,self.init_created_count)
         self.run()
 
     def _simulation_should_continue(self):
-        if len(self.grave_yard) == len(self.population):
+        if self.death_count == len(self.population):
             print("all died")
-            return False
-        else:
-            for i in self.population:
-                if i.infected == True and i.is_alive == True:
-                    print("keep going")
-                    return True
-                elif i.infected == False and i.is_alive == True:
-                    print("all cured")
-                    return False 
-
-    def run(self):
-        if self._simulation_should_continue() == True:
-            self.time_step_counter += 1
-            self.time_step()
-        elif self._simulation_should_continue() == False:
+            print('The simulation has ended after %s turns.' % (self.time_step_counter))            
+        elif self.death_count + self.vacc_count == len(self.population):
+            print("all cured")
             print('The simulation has ended after %s turns.' % (self.time_step_counter))
+        else:
+            print("keep going")
+            self.time_step()
+
+    def run(self):        
+        self.time_step_counter += 1
+        self._simulation_should_continue()
 
     def time_step(self):
-        log = Logger(self.file_name)
-        interaction_counter = 0
-        # Find 2 people that are alive
-        for i in range(10000):
-            for person in self.population:
-                random_person = random.choice(self.population)
-                if random_person.is_alive == True and person.is_alive == True:
-                    self.interaction(person, random_person)
-                    interaction_counter += 1
-                elif random_person.is_alive == False:
-                    self.time_step()
-        log.log_time_step(interaction_counter)
+        self._infected_person()
+        self._random_person()
+        self.interaction(self.current_person, self.random_person)
+        
+    def _infected_person(self):
+        for person in self.population:
+            if person.infected == True and person.is_alive == True and person.is_vaccinated == False: 
+                self.current_person = person
 
+    def _random_person(self):
+        for random_person in self.population:
+            if random_person.infected = False and random_person.is_alive == True and random_person.is_vaccinated == False:
+                self.current_random_person = person
+        
     def interaction(self, person, random_person):
         log = Logger(self.file_name)
         did_infect = None
         random_vaccinated = None
-        if random_person.infected == False and random_person.is_vaccinated == False and person.infected == True:
-            random_num = random.random()
-            if random_num < self.basic_repro_num:
-                did_infect = True
-                log.log_infected(person, random_person)
-                random_person.infected = True
-                self.infection_death()
-            else:
-                did_infect = False
-                # person is vaccinated if person didn't get infected
-                random_person.is_vaccinated = True
-                log.log_vaccinated(person)
-                self.run()
-    
-    def infection_death(self):
-        log = Logger(self.file_name)
+        self.interaction_counter += 1
+        log.log_time_step(self.interaction_counter)
         random_num = random.random()
-        for person in self.population:
+        if random_num < self.basic_repro_num:
+            did_infect = True
+            log.log_infected(person, random_person)
+            random_person.infected = True
+            random_num = random.random()
             if random_num > self.mortality_rate:
-                person.is_alive = False
-                person.is_vaccinated = False
-                log.log_infection_death(person)
-                self.grave_yard()
-            else:
-                person.is_vaccinated = True
-                person.is_alive = True
-                log.log_survived(person)
-                self.run()
-    
-    def grave_yard(self):
-        for person in self.population:
-            if person.is_alive == False and person not in self.grave_yard:
-                self.grave_yard.append(person)
+                random_person.is_alive = False
+                random_person.is_vaccinated = None
+                log.log_infection_death(random_person)
+                self.death_count += 1
                 self.run()
             else:
+                random_person.is_vaccinated = True
+                random_person.is_alive = True
+                log.log_survived(random_person, person)
+                self.vacc_count += 1
                 self.run()
-
-        print(self.grave_yard)
+        else:
+            did_infect = False
+            random_person.is_vaccinated = True
+            log.log_vaccinated(person)
+            self.vacc_count += 1
+            self.run()
 
 def start_this():
     pop_size = 50
@@ -125,8 +121,9 @@ def start_this():
     virus_name = "Ebola"
     mortality_rate = 0.70
     basic_repro_num = 0.25
-    initial_infected = 10
+    initial_infected = 5
 
-    simulation = Simulation(pop_size, vacc_percentage, virus_name, mortality_rate, basic_repro_num, initial_infected)
+    simulation = Simulation(population_size=pop_size, vacc_percentage=vacc_percentage, virus_name=virus_name, mortality_rate=mortality_rate, basic_repro_num=basic_repro_num, initial_infected=initial_infected)
 
 start_this()
+

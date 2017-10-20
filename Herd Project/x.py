@@ -1,3 +1,3 @@
 import random 
 x = random.random()
-print(x)
+print(round(x,2))
