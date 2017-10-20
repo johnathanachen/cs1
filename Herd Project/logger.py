@@ -62,8 +62,3 @@ class Logger(object):
         log = open(self.file_name, "a+")
         log.write("Population 0 \n")
         log.write('The simulation has ended after %s turns. \n' % (time_step_counter))
-    
-    def log_after_math_metrics(self, death_count, vacc_count, infected, initial_infected):
-        log = open(self.file_name, "a+")
-        log.write("TOTAL // Death: %s\t Vacc: %s\t Infected: %s\t Initial Infected: %s\n" % (death_count, vacc_count, infected, initial_infected))
-        

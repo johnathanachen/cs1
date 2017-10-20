@@ -62,7 +62,6 @@ class Simulation(object):
             print('The simulation has ended after %s turns.' % (self.time_step_counter))            
         elif self.death_count + self.vacc_count == len(self.population):
             log.log_cured(self.time_step_counter)
-            log.log_after_math_metrics(self.death_count, self.vacc_count, self.total_infected, self.initial_infected)
             print("Virus Spread Eliminated")
             print('The simulation has ended after %s turns.' % (self.time_step_counter)) 
         else:
@@ -99,7 +98,6 @@ class Simulation(object):
         if random_num < self.basic_repro_num:
             did_infect = True
             log.log_infected(person, random_person)
-            self.total_infected += 1
             random_person.infected = True
             random_num = random.random()
             if random_num > self.mortality_rate:
